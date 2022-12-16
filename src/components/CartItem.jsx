@@ -1,7 +1,7 @@
 import React from 'react'
 
-const CartItem = () => {
-  const product = {}
+const CartItem = ({product, RemoveItem}) => {
+
   const { id, name, price, quantity, picture } = product
   return (
     <li className='flex flex-col py-6 sm:flex-row sm:justify-between'>
@@ -30,6 +30,7 @@ const CartItem = () => {
             <button
               type='button'
               className='flex items-center px-2 py-1 pl-0 space-x-1'
+              onClick={() =>RemoveItem(id)}
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
